@@ -8,6 +8,9 @@ Filter out system accounds and local admin (specified before egzecution) and rem
 
 #>
 
+Write-Host "Still in the making, only archiving semi works" -ForegroundColor Red
+
+
 [CmdletBinding()]
 param (
     [Parameter(Mandatory=$false)]
