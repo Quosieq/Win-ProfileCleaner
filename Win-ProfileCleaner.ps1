@@ -121,6 +121,7 @@ $profiles = Get-ChildItem -Path "C:\users" -Depth 1 -Include *.dat
 $excludedProfiles = @("Public", "Default", "Admin", $env:USERNAME) # To not remove essential proflies (change whatever you need)
 $today = Get-Date
 
+#big boi
 foreach ($user in $profiles) {
     
     $profileDir = Split-Path -Path $user.FullName -Parent
@@ -133,13 +134,17 @@ foreach ($user in $profiles) {
         $username = $username.Replace("\","")
     
         if($loginDiff -gt $DaysInactive) {
+
             Write-Host "User $($username) hasn't logged in more than 90 days - last login $($loginDiff.Days) days ago" -ForegroundColor Yellow
             $archiveConfirm = Read-Host("Would you like to archive his profile? (Y/N)")
+
             if($archiveConfirm -eq "y") {
+
                 Write-Host "`n===== Archive modes =====" -ForegroundColor Magenta
                 Write-Host "1. Full: predefined folders `n2. Partial: Define folders to archive`n"
                 [int]$ArchiveMode = Read-Host("Which mode to archive use for this profile? (1/2)")
                 $OutputPath = Read-Host("`nPlease specify path where archive will be stored")
+
                 while($true){
                     if($ArchiveMode -eq 1) {
                         ArchiveProfile -ArchiveMode Full -OutputPath $OutputPath
