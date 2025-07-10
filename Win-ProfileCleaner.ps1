@@ -113,6 +113,7 @@ function ArchiveProfile {
             Write-Host "Profile archived to $($OutputPath)\$($archiveName)" -ForegroundColor Gray
         }else{
             Write-Host "Something went wrong`nFailed to archive folders - 7zip error code $($archivingProcess.ExitCode)" -ForegroundColor Red
+            exit 0
         }
     }catch{
         Write-Host "Error: $_"
