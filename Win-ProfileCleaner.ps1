@@ -4,7 +4,7 @@ Remove user profiles older user profiles.
 
 .DESCRIPTION
 Scan C:\Users and chceck each profile NTUSER.DAT last modified date to check when user logged in
-Filter out system accounds and local admin (specified before egzecution) and remove (with option to archive) profiles older than specified time 
+Filter out system accounds and local admin (specified before execution) and remove (with option to archive) profiles older than specified time 
 
 #>
 
